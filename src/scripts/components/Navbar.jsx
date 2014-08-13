@@ -21,6 +21,11 @@ var FrontpageListItem = require('../../scripts/components/FrontpageListItem.jsx'
 var Navbar = React.createClass({
   render: function () {
     var pageName = this.props.name;
+    var categories = this.props.categories.map(function(category){
+      return(
+        <FrontpageListItem content={category} />              
+      )
+    });
     return (
         <Grid>
             <PageHeader>Chefssss<small>  Tune Food Wizards Repo {pageName}</small></PageHeader>
@@ -52,9 +57,7 @@ var Navbar = React.createClass({
                 </Carousel>
               </Col>
               <Col xs={2}>
-                <FrontpageListItem content="Breakfast" />
-                <FrontpageListItem content="Lunch" />
-                <FrontpageListItem content="Dinner" />
+                {categories}
               </Col>
               <Col xs={2}>
 

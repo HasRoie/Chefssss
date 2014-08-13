@@ -10,6 +10,7 @@ var Landing = require('../../scripts/components/Landing.jsx');
 var App = require('../../scripts/components/App.jsx');
 var Categories = require('../../scripts/components/Categories.jsx');
 var Category = require('../../scripts/components/Category.jsx');
+var NewRecipe = require('../../scripts/components/NewRecipe.jsx');
 var Routes = require('react-router/Routes');
 var Route = require('react-router/Route');
 
@@ -28,6 +29,7 @@ var Index = React.createClass({
         <Route handler={App}>
           <Route name="categories" path="/index.html" handler={Categories} />
           <Route name="category" path="/category/:categoryName" handler={Category} />
+          <Route name="createNew" path="/category/create/:categoryName" handler={NewRecipe} />
         </Route>
       </Routes>
     );
